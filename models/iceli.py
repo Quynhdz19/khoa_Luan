@@ -25,12 +25,12 @@ def get_parser() -> ArgumentParser:
     return parser
 
 
-class SOIF(ContinualModel):
-    NAME = 'soif'
-    COMPATIBILITY = ['class-il', 'task-il']
+class ICELI(ContinualModel):
+    NAME = 'iceli'
+    COMPATIBILITY = ['class-il']
 
     def __init__(self, backbone, loss, args, transform):
-        super(SOIF, self).__init__(backbone, loss, args, transform)
+        super(ICELI, self).__init__(backbone, loss, args, transform)
         self.buffer = Buffer(self.args.buffer_size, self.device)
         self.task = 0
         self.epoch = 0
